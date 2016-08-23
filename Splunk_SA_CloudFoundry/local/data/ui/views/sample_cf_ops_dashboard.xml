@@ -11,5 +11,6 @@
   </row>
   <row>
     <panel ref="router_latency_by_cell" app="Splunk_SA_CloudFoundry"></panel>
+    <panel ref="router_bad_gateways" app="Splunk_SA_CloudFoundry"></panel>
   </row>
 </dashboard>

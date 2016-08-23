@@ -1,5 +1,5 @@
 <panel>
-  <title>CF - Cell Capacity - Total Remaining Memory (1 Hr Sparkline)</title>
+  <title>CF - Cell Capacity - Total Available Mem (GB) (1 Hr Sparkline)</title>
   <single>
     <search ref="CF - Cell Capacity - Total Remaining Memory"></search>
       <earliest>-60m@m</earliest>

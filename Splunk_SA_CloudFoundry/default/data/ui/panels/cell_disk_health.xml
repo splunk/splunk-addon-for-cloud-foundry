@@ -1,0 +1,21 @@
+<panel>
+  <title>CF - Cells with Least Available Disk</title>
+  <input type="text" token="disk_threshold">
+    <label>Available Disk Threshold</label>
+    <default>2</default>
+    <initialValue>2</initialValue>
+  </input>
+  <table>
+    <title></title>
+    <search>
+      <query><![CDATA[
+| savedsearch "CF - Cell Disk Health"
+| sort 20 disk
+| eval health=if(disk < $disk_threshold$, "⚠", "✓")
+| rename disk as "Available Disk Space (GB)", jobInstance as "Job Instance", health as "Health"]]>
+      </query>
+      <earliest>-60m@m</earliest>
+      <latest>now</latest>
+    </search>
+  </table>
+</panel>

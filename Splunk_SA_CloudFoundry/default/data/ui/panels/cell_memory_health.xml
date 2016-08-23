@@ -1,20 +1,21 @@
 <panel>
-    <title>CF - Top Cells with Least Available Memory (Last 1 hour)</title>
-    <input type="text" token="mem_threshold">
-        <label>MemoryThreshold</label>
-        <default>4</default>
-        <initialValue>4</initialValue>
-    </input>
-    <table>
-        <title></title>
-        <search>
-            <query><![CDATA[
+  <title>CF - Cells with Least Available Memory</title>
+  <input type="text" token="mem_threshold">
+    <label>Memory Threshold</label>
+    <default>4</default>
+    <initialValue>4</initialValue>
+  </input>
+  <table>
+    <title></title>
+    <search>
+      <query><![CDATA[
 | savedsearch "CF - Cell Memory Health"
+| sort 20 mem
 | eval health=if(mem < $mem_threshold$, "⚠", "✓")
 | rename mem as "Available Memory (GB)", jobInstance as "Job Instance", health as "Health"]]>
-            </query>
-            <earliest>-60m@m</earliest>
-            <latest>now</latest>
-        </search>
-    </table>
+      </query>
+      <earliest>-60m@m</earliest>
+      <latest>now</latest>
+    </search>
+  </table>
 </panel>

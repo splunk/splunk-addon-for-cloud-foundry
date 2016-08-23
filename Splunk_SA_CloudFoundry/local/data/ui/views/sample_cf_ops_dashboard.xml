@@ -1,0 +1,15 @@
+<dashboard>
+  <label>Cloud Foundry - Sample Ops Dashboard</label>
+  <row>
+    <panel ref="cell_capacity_available_memory" app="Splunk_SA_CloudFoundry"></panel>
+    <panel ref="router_routes_count" app="Splunk_SA_CloudFoundry"></panel>
+  </row>
+  <row>
+    <panel ref="cell_capacity_available_memory_by_cell" app="Splunk_SA_CloudFoundry"></panel>
+    <panel ref="cell_disk_health" app="Splunk_SA_CloudFoundry"></panel>
+    <panel ref="cell_memory_health" app="Splunk_SA_CloudFoundry"></panel>
+  </row>
+  <row>
+    <panel ref="router_latency_by_cell" app="Splunk_SA_CloudFoundry"></panel>
+  </row>
+</dashboard>

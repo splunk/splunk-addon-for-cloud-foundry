@@ -1,2 +1,4 @@
 *local.meta
-Splunk_SA_CloudFoundry/local/*
+Splunk_SA_CloudFoundry/local/data/ui/panels/*
+Splunk_SA_CloudFoundry/local/data/ui/views/*
+!Splunk_SA_CloudFoundry/local/data/ui/views/sample_cf_ops_dashboard.xml

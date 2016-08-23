@@ -1,5 +1,5 @@
 <panel>
-  <title>CF - Router Latency per Cell (Last 1 Hr)</title>
+  <title>CF - Router Latency by Cell (Last 1 Hr)</title>
   <chart>
     <search>
       <query>sourcetype="cf:valuemetric" name=latency | eval const=60 | timechart max(value) as latency by jobInstance | eval const=60 | rename const as "Latency Threshold"</query>

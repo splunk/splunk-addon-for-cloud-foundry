@@ -1,5 +1,5 @@
 <panel>
-  <title>CF - Cell Capacity - Remaining Memory per Cell (Last 1 Hr)</title>
+  <title>CF - Cell Capacity - Remaining Memory by Cell (Last 1 Hr)</title>
   <chart>
     <search ref="CF - Cell Capacity - Remaining Memory">
       <earliest>-60m@m</earliest>

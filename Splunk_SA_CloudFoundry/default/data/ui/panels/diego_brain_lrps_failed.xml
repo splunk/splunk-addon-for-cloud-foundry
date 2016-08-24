@@ -2,7 +2,7 @@
   <title>CF - Diego LRPs Failed (Last 1 Hr)</title>
   <single>
     <search>
-      <query>sourcetype=cf:counterevent name=AuctioneerLRPAuctionsFailed | timechart span=1hr sum(delta) as LRPAuctionsFailed</query>
+      <query>sourcetype=cf:counterevent name=AuctioneerLRPAuctionsFailed | timechart span=1h sum(delta) as LRPAuctionsFailed</query>
       <earliest>0</earliest>
       <latest></latest>
     </search>

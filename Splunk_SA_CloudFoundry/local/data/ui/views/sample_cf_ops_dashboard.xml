@@ -16,6 +16,7 @@
   <row>
     <panel ref="router_latency_by_cell" app="Splunk_SA_CloudFoundry"></panel>
     <panel ref="router_bad_gateways" app="Splunk_SA_CloudFoundry"></panel>
+    <panel ref="bbs_lrp_convergence_duration" app="Splunk_SA_CloudFoundry"></panel>
   </row>
   <row>
     <panel ref="bbs_lrps_running" app="Splunk_SA_CloudFoundry"></panel>

@@ -1,7 +1,7 @@
 <panel>
   <title>CF - Cells with Least Available Disk</title>
   <input type="text" token="disk_threshold">
-    <label>Available Disk Threshold</label>
+    <label>Disk Threshold (GB)</label>
     <default>2</default>
     <initialValue>2</initialValue>
   </input>

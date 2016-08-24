@@ -1,7 +1,7 @@
 <panel>
   <title>CF - Cells with Least Available Memory</title>
   <input type="text" token="mem_threshold">
-    <label>Memory Threshold</label>
+    <label>Memory Threshold (GB)</label>
     <default>4</default>
     <initialValue>4</initialValue>
   </input>

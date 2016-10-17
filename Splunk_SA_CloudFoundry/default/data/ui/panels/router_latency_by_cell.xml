@@ -2,7 +2,7 @@
   <title>CF - Router Latency by Cell (Last 1 Hr)</title>
   <chart>
     <search>
-      <query>sourcetype="cf:valuemetric" name=latency | eval const=60 | timechart max(value) as latency by jobInstance | eval const=60 | rename const as "Latency Threshold"</query>
+      <query>sourcetype="cf:valuemetric" name=latency | timechart max(value) as latency by job_instance</query>
       <earliest>-60m@m</earliest>
       <latest>now</latest>
     </search>
@@ -22,7 +22,6 @@
     <option name="charting.chart.bubbleMinimumSize">10</option>
     <option name="charting.chart.bubbleSizeBy">area</option>
     <option name="charting.chart.nullValueMode">gaps</option>
-    <option name="charting.chart.overlayFields">"Latency Threshold"</option>
     <option name="charting.chart.showDataLabels">none</option>
     <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
     <option name="charting.chart.stackMode">default</option>
@@ -32,6 +31,5 @@
     <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
     <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
     <option name="charting.legend.placement">right</option>
-    <option name="charting.fieldColors">{"Latency Threshold":0xFF5A09}</option>
   </chart>
 </panel>

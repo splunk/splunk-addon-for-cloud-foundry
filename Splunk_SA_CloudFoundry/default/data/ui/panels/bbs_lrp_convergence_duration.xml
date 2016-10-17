@@ -2,7 +2,7 @@
   <title>CF - BBS Convergence Duration (Last 4 Hrs)</title>
   <chart>
     <search>
-      <query>sourcetype="cf:valuemetric" name="ConvergenceLRPDuration" | eval value_s=round(value/(1000*1000*1000), 2) | timechart max(value_s) as latency span=1m | eval high=10, critical=20</query>
+      <query>sourcetype="cf:valuemetric" name="ConvergenceLRPDuration" | eval value_s=round(value/(1000*1000*1000), 2) | timechart max(value_s) as latency span=1m</query>
       <earliest>-4h@m</earliest>
       <latest>now</latest>
     </search>

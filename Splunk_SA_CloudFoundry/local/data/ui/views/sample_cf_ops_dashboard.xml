@@ -1,5 +1,6 @@
 <dashboard>
   <label>Cloud Foundry - Sample Ops Dashboard</label>
+  <fieldset submitButton="false"></fieldset>
   <row>
     <panel ref="cell_capacity_available_memory" app="Splunk_SA_CloudFoundry"></panel>
     <panel ref="cell_capacity_available_disk" app="Splunk_SA_CloudFoundry"></panel>

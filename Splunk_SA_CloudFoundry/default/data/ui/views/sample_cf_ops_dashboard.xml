@@ -1,5 +1,6 @@
 <dashboard>
   <label>Cloud Foundry - Sample Ops Dashboard</label>
+  <description>Demonstration of all pre-built panels packaged in Splunk CloudFoundry Add-on</description>
   <fieldset submitButton="false"></fieldset>
   <row>
     <panel ref="cell_capacity_available_memory" app="Splunk_SA_CloudFoundry"></panel>

@@ -1,5 +1,6 @@
 <panel>
   <title>CF - BBS - Applications Delta</title>
+  <description>Applications Delta - Apps pushed or deleted</description>
   <single>
     <search>
       <query>sourcetype="cf:valuemetric" name="LRPsDesired" | timechart span=1h avg(value) as num | streamstats last(num) as num_prev current=f window=2 | eval delta=num-num_prev | fields - num_prev, num</query>

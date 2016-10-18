@@ -1,5 +1,6 @@
 <panel>
   <title>CF - Total BBS LRPs Running</title>
+  <description>Total number of LRP instances that are running on cells</description>
   <single>
     <search>
       <query>sourcetype="cf:valuemetric" name="LRPsRunning" | timechart span=1h avg(value) as LRPsRunning</query>

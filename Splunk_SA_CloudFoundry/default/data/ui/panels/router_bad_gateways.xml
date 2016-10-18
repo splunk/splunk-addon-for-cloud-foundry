@@ -1,5 +1,6 @@
 <panel>
   <title>CF - Router Bad Gateways (Last 4 Hrs)</title>
+  <description>Number of HTTP errors (non 200 response) from running applications</description>
   <chart>
     <search>
       <query>sourcetype=cf:counterevent name="bad_gateways" | timechart sum(delta) as count</query>

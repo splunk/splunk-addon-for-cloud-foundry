@@ -1,5 +1,6 @@
 <panel>
   <title>CF - BBS Convergence Duration (Last 4 Hrs)</title>
+  <description>Time the BBS took to run its LRP convergence pass</description>
   <chart>
     <search>
       <query>sourcetype="cf:valuemetric" name="ConvergenceLRPDuration" | eval value_s=round(value/(1000*1000*1000), 2) | timechart max(value_s) as latency span=1m</query>

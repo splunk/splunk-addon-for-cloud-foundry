@@ -1,5 +1,6 @@
 <panel>
   <title>CF - Total BBS LRPs Missing</title>
+  <description>Total number of LRP instances that are desired but have no record in the BBS</description>
   <single>
     <search>
       <query>sourcetype="cf:valuemetric" name="LRPsMissing" | timechart span=1h avg(value) as LRPsMissing</query>

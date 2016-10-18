@@ -1,5 +1,6 @@
 <panel>
   <title>CF - Diego LRPs Failed (Last 1 Hr)</title>
+  <description>Number of LRP instances that the auctioneer failed to place on Diego cells</description>
   <single>
     <search>
       <query>sourcetype=cf:counterevent name=AuctioneerLRPAuctionsFailed | timechart span=1h sum(delta) as LRPAuctionsFailed</query>

@@ -1,5 +1,6 @@
 <panel>
   <title>CF - Total Routes (1 Hr Sparkline)</title>
+  <description>Total number of routes registered</description>
   <single>
     <search>
       <query>sourcetype=cf:valuemetric name=RoutesTotal | timechart avg(value) as numRoutes</query>

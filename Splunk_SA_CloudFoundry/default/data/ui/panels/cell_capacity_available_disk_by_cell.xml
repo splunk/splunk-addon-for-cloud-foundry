@@ -1,5 +1,6 @@
 <panel>
   <title>CF - Cell Capacity - Available Disk (GB) by Cell (Last 1 Hr)</title>
+  <description>Total amount of disk available by cell to allocate to containers</description>
   <chart>
     <search ref="CF - Cell Capacity - Remaining Disk">
       <earliest>-60m@m</earliest>

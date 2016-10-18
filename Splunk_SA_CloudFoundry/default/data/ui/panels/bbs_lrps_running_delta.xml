@@ -1,5 +1,6 @@
 <panel>
   <title>CF - BBS - Application Instance (Container) Delta</title>
+  <description>Application Instance (Container) Delta - AIs started or stopped</description>
   <single>
     <search>
       <query>sourcetype="cf:valuemetric" name="LRPsRunning" | timechart span=1h avg(value) as num | streamstats last(num) as num_prev current=f window=2 | eval delta=num-num_prev | fields - num_prev, num</query>

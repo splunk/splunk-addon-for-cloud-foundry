@@ -1,5 +1,6 @@
 <panel>
   <title>CF - Router Latency by Cell (Last 1 Hr)</title>
+  <description>Latency by router cell</description>
   <chart>
     <search>
       <query>sourcetype="cf:valuemetric" name=latency | timechart max(value) as latency by job_instance</query>

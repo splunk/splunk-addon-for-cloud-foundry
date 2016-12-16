@@ -2,6 +2,8 @@
 
 Splunk Add-on for Cloud Foundry is used to parse, analyze & visualize [Cloud Foundry Firehose](https://docs.cloudfoundry.org/loggregator/architecture.html#firehose) data which includes metrics from all Cloud Foundry system components, in addition to logs and metrics from all applications.  It provides several prebuilt panels targeted for Cloud Foundry operators to help them easily build dashboards and gain operational visibility over their Cloud Foundry deployments.
 
+![alt text](./dashboard-sample-cloud-foundry-add-on.png "Sample Ops Dashboard for Cloud Foundry")
+
 ## Prerequisites
 Splunk Add-on for Cloud Foundry is a Supporting Add-on, and as such, it does **not** contain any inputs. It is used in conjunction with [Splunk Firehose Nozzle for PCF](https://docs.pivotal.io/splunk/index.html) which collects data from Cloud Foundry Firehose and forwards it to a Splunk deployment.
 
@@ -49,5 +51,6 @@ Pull requests via github are welcome!
 * Copyright 2016 Splunk, Inc.
 
 Splunk Add-on for Cloud Foundry is licensed under the Apache License 2.0.
+
 Details can be found in the LICENSE file.
 

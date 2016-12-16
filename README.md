@@ -5,7 +5,9 @@ Splunk Add-on for Cloud Foundry is used to parse, analyze & visualize [Cloud Fou
 ![alt text](./dashboard-sample-cloud-foundry-add-on.png "Sample Ops Dashboard for Cloud Foundry")
 
 ## Prerequisites
-Splunk Add-on for Cloud Foundry is a Supporting Add-on, and as such, it does **not** contain any inputs. It is used in conjunction with [Splunk Firehose Nozzle for PCF](https://docs.pivotal.io/splunk/index.html) which collects data from Cloud Foundry Firehose and forwards it to a Splunk deployment.
+Splunk Add-on for Cloud Foundry is a Supporting Add-on, and as such, it does **not** contain any inputs. It is used in conjunction with [Splunk Firehose Nozzle](https://github.com/cloudfoundry-community/splunk-firehose-nozzle) which collects data from Cloud Foundry Firehose and forwards it to a Splunk deployment.
+
+For BOSH-managed deployment of Splunk Firehose Nozzle, refer to [Splunk Firehose Nozzle BOSH release](https://github.com/cloudfoundry-community/splunk-firehose-nozzle-release) which deploys the nozzle along with a co-located pre-configured Splunk forwarder to forward to one or more Splunk indexers in a reliable, secure & scalable manner.
 
 ## Installing Splunk Add-on for Cloud Foundry
 Splunk Add-on for Cloud Foundry is installed on Splunk search head(s).
@@ -34,11 +36,11 @@ Splunk Add-on for Cloud Foundry provides several prebuilt panels that you can im
 
 ## Resources
 
-### Splunk Nozzle for PCF tile
-* https://network.pivotal.io/products/splunk-nozzle
-* https://docs.pivotal.io/splunk/using.html
+### Splunk Firehose Nozzle
+* https://github.com/cloudfoundry-community/splunk-firehose-nozzle
+* https://github.com/cloudfoundry-community/splunk-firehose-nozzle-release
 
-### Using & scaling Cloud Foundry Loggregator & Nozzles
+### Cloud Foundry Loggregator & Nozzles
 * https://docs.cloudfoundry.org/loggregator/architecture.html#firehose
 * https://docs.pivotal.io/pivotalcf/1-8/loggregator/log-ops-guide.html
 

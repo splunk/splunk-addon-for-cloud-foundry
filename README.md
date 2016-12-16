@@ -9,7 +9,7 @@ Splunk Add-on for Cloud Foundry is a Supporting Add-on, and as such, it does **n
 
 ## Installing Splunk Add-on for Cloud Foundry
 Splunk Add-on for Cloud Foundry is installed on Splunk search head(s).
-Download the Add-on from [Splunkbase]() then upload the .spl file either directly via [Splunk UI](http://docs.splunk.com/Documentation/AddOns/released/Overview/Singleserverinstall) or Splunk CLI in case of a single instance Splunk deployment. For a distributed Splunk deployment, you may want to install it via Splunk [deployment server](http://docs.splunk.com/Documentation/Splunk/latest/Updating/Aboutdeploymentserver) or Splunk [search head cluster deployer](http://docs.splunk.com/Documentation/Splunk/latest/DistSearch/PropagateSHCconfigurationchanges) (in case of a search head cluster), or your favorite configuration management tool.
+Download the Add-on from [Splunkbase]() then upload the .spl file either directly via [Splunk UI](http://docs.splunk.com/Documentation/AddOns/released/Overview/Singleserverinstall) or Splunk CLI in case of a single instance Splunk deployment. For a distributed Splunk deployment, you may want to install it via Splunk [deployment server](http://docs.splunk.com/Documentation/Splunk/latest/Updating/Aboutdeploymentserver) or Splunk [search head cluster deployer](http://docs.splunk.com/Documentation/Splunk/latest/DistSearch/PropagateSHCconfigurationchanges) (in case of a search head cluster), or your favorite 3rd party configuration management tool.
 
 Alternatively, for development purposes, you can clone this repo and copy/symlink it under `etc/apps/` directory of your Splunk installation.
 

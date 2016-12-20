@@ -54,5 +54,5 @@ Pull requests via github are welcome!
 
 Splunk Add-on for Cloud Foundry is licensed under the Apache License 2.0.
 
-Details can be found in the LICENSE file.
+Details can be found in the [LICENSE file](https://github.com/splunk/splunk-addon-for-cloud-foundry/blob/master/LICENSE).
 

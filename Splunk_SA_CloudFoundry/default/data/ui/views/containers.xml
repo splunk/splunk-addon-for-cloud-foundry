@@ -15,7 +15,7 @@
       <fieldForLabel>cf_org_name</fieldForLabel>
       <fieldForValue>cf_org_name</fieldForValue>
       <search>
-        <query>index=cloudfoundry sourcetype="cf:containermetric" | stats count by cf_org_name</query>
+        <query>`cf_index` sourcetype="cf:containermetric" | stats count by cf_org_name</query>
         <earliest>-60m@m</earliest>
         <latest>now</latest>
       </search>
@@ -27,7 +27,7 @@
       <fieldForLabel>cf_space_name</fieldForLabel>
       <fieldForValue>cf_space_name</fieldForValue>
       <search>
-        <query>index=cloudfoundry sourcetype="cf:containermetric" cf_org_name="$org$" | stats count by cf_space_name</query>
+        <query>`cf_index` sourcetype="cf:containermetric" cf_org_name="$org$" | stats count by cf_space_name</query>
         <earliest>-60m@m</earliest>
         <latest>now</latest>
       </search>
@@ -38,7 +38,7 @@
       <title>Instances</title>
       <chart>
         <search>
-          <query>index=cloudfoundry sourcetype="cf:containermetric" cf_org_name="$org$" cf_space_name="$space$" | timechart max(instance_index) by cf_app_name</query>
+          <query>`cf_index` sourcetype="cf:containermetric" cf_org_name="$org$" cf_space_name="$space$" | timechart max(instance_index) by cf_app_name</query>
           <earliest>$time.earliest$</earliest>
           <latest>$time.latest$</latest>
           <sampleRatio>1</sampleRatio>
@@ -77,7 +77,7 @@
       <title>CPU</title>
       <single>
         <search>
-          <query>index=cloudfoundry sourcetype="cf:containermetric" cf_org_name="$org$" cf_space_name="$space$" | timechart avg(cpu_percentage) by cf_app_name</query>
+          <query>`cf_index` sourcetype="cf:containermetric" cf_org_name="$org$" cf_space_name="$space$" | timechart avg(cpu_percentage) by cf_app_name</query>
           <earliest>$time.earliest$</earliest>
           <latest>$time.latest$</latest>
           <sampleRatio>1</sampleRatio>
@@ -92,7 +92,8 @@
         <option name="showTrendIndicator">1</option>
         <option name="trellis.enabled">1</option>
         <option name="trellis.scales.shared">1</option>
-        <option name="trellis.size">large</option>
+        <option name="trellis.size">medium</option>
+        <option name="trellis.splitBy">cf_app_name</option>
         <option name="trendColorInterpretation">standard</option>
         <option name="trendDisplayMode">absolute</option>
         <option name="trendInterval">-1m</option>
@@ -102,15 +103,13 @@
         <option name="useThousandSeparators">0</option>
       </single>
     </panel>
-  </row>
-  <row>
     <panel>
       <title>Disk Quota</title>
       <single>
         <search>
-          <query>index=cloudfoundry sourcetype="cf:containermetric" cf_org_name="$org$" cf_space_name="$space$" | eval disk_percentage=disk_bytes/disk_bytes_quota*100 | timechart avg(disk_percentage) by cf_app_name</query>
-          <earliest>-60m@m</earliest>
-          <latest>now</latest>
+          <query>`cf_index` sourcetype="cf:containermetric" cf_org_name="$org$" cf_space_name="$space$" | eval disk_percentage=disk_bytes/disk_bytes_quota*100 | timechart avg(disk_percentage) by cf_app_name</query>
+          <earliest>$time.earliest$</earliest>
+          <latest>$time.latest$</latest>
           <sampleRatio>1</sampleRatio>
         </search>
         <option name="colorBy">value</option>
@@ -123,7 +122,7 @@
         <option name="showTrendIndicator">1</option>
         <option name="trellis.enabled">1</option>
         <option name="trellis.scales.shared">1</option>
-        <option name="trellis.size">large</option>
+        <option name="trellis.size">medium</option>
         <option name="trendColorInterpretation">standard</option>
         <option name="trendDisplayMode">absolute</option>
         <option name="trendInterval">-1m</option>
@@ -133,15 +132,13 @@
         <option name="useThousandSeparators">0</option>
       </single>
     </panel>
-  </row>
-  <row>
     <panel>
       <title>Memory Quota</title>
       <single>
         <search>
-          <query>index=cloudfoundry sourcetype="cf:containermetric" cf_org_name="$org$" cf_space_name="$space$" | eval memory_percentage=memory_bytes/memory_bytes_quota*100 | timechart avg(memory_percentage) by cf_app_name</query>
-          <earliest>-60m@m</earliest>
-          <latest>now</latest>
+          <query>`cf_index` sourcetype="cf:containermetric" cf_org_name="$org$" cf_space_name="$space$" | eval memory_percentage=memory_bytes/memory_bytes_quota*100 | timechart avg(memory_percentage) by cf_app_name</query>
+          <earliest>$time.earliest$</earliest>
+          <latest>$time.latest$</latest>
           <sampleRatio>1</sampleRatio>
         </search>
         <option name="colorBy">value</option>
@@ -154,7 +151,8 @@
         <option name="showTrendIndicator">1</option>
         <option name="trellis.enabled">1</option>
         <option name="trellis.scales.shared">1</option>
-        <option name="trellis.size">large</option>
+        <option name="trellis.size">medium</option>
+        <option name="trellis.splitBy">cf_app_name</option>
         <option name="trendColorInterpretation">standard</option>
         <option name="trendDisplayMode">absolute</option>
         <option name="trendInterval">-1m</option>

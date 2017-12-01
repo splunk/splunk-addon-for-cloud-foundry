@@ -3,11 +3,12 @@
   <fieldset submitButton="false">
     <input type="dropdown" token="app">
       <label>App</label>
+      <default>eureka-fc42ce7b-851d-4210-b66e-5a954206c135</default>
       <fieldForLabel>cf_app_name</fieldForLabel>
       <fieldForValue>cf_app_name</fieldForValue>
       <search>
-        <query>index=cloudfoundry sourcetype="cf:httpstartstop" cf_app_name=* | stats count by cf_app_name</query>
-        <earliest>-60m@m</earliest>
+        <query>`cf_index` sourcetype="cf:logmessage" cf_app_name=* | stats count by cf_app_name</query>
+        <earliest>-24h@h</earliest>
         <latest>now</latest>
       </search>
     </input>
@@ -24,7 +25,7 @@
       <title>Latency (99th percentile)</title>
       <chart>
         <search>
-          <query>index=cloudfoundry sourcetype="cf:httpstartstop" cf_app_name=$app$ | timechart perc99(duration_ms) as Actual | predict Actual as "Predicted" future_timespan=20</query>
+          <query>`cf_index` sourcetype="cf:httpstartstop" cf_app_name=$app$ | timechart perc99(duration_ms) as Actual | predict Actual as "Predicted" future_timespan=20</query>
           <earliest>$time.earliest$</earliest>
           <latest>$time.latest$</latest>
           <sampleRatio>1</sampleRatio>
@@ -63,7 +64,7 @@
       <title>Request Status</title>
       <chart>
         <search>
-          <query>index=cloudfoundry sourcetype="cf:httpstartstop" cf_app_name="$app$" | timechart count as "Requests" by status_code</query>
+          <query>`cf_index` sourcetype="cf:httpstartstop" cf_app_name="$app$" | timechart count as "Requests" by status_code</query>
           <earliest>$time.earliest$</earliest>
           <latest>$time.latest$</latest>
           <sampleRatio>1</sampleRatio>
@@ -101,7 +102,7 @@
     <panel>
       <map>
         <search>
-          <query>index=cloudfoundry sourcetype="cf:httpstartstop" cf_app_name="$app$" | eval remote_ip=mvindex(split(remote_addr,":"),0) | iplocation remote_ip | geostats count by status_code</query>
+          <query>`cf_index` sourcetype="cf:httpstartstop" cf_app_name=$app$ | eval remote_ip=mvindex(split(remote_addr, ":"),0) | iplocation remote_ip | geostats count by status_code</query>
           <earliest>$time.earliest$</earliest>
           <latest>$time.latest$</latest>
           <sampleRatio>1</sampleRatio>
@@ -132,6 +133,22 @@
         <option name="trellis.scales.shared">1</option>
         <option name="trellis.size">medium</option>
       </map>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Logs</title>
+      <table>
+        <search>
+          <query>index=sbux sourcetype="cf:logmessage" cf_app_name="$app$" | fields - _raw | eval Time=strftime(_time, "%c") | rename msg as Message | fields Time Message</query>
+          <earliest>$time.earliest$</earliest>
+          <latest>$time.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">row</option>
+        <option name="wrap">false</option>
+      </table>
     </panel>
   </row>
 </form>
